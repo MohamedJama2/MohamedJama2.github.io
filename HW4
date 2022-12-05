@@ -1,0 +1,18 @@
+<script>
+let app = Vue.createApp({
+      data() {     
+           return {
+               presents: [],
+               lumps_of_coal: []          
+           }
+      },
+      methods: {    
+           async getData() {
+              const response = await fetch('presents.json')
+              this.presents = await response.json()
+           },
+      }
+})
+      
+app.mount('#answerApp')   
+</script>
